@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.activity.ListaPacotesActivity">
+    tools:context=".ui.ui.activity.ListaPacotesActivity">
 
     <ImageView
         android:id="@+id/imageView2"
@@ -41,8 +41,10 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <ListView
+        android:id="@+id/lista_pacotes_listview"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        tools:listitem="@layout/item_pacote"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/imageView2"
