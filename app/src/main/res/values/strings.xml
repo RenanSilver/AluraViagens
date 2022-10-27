@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Alura Viagens</string>
     <string name="banner_inicial_dos_pacotes">banner inicial dos pacotes</string>
+    <string name="preco_final">Preço final:</string>
+    <string name="realizar_pagamento">Realizar pagamento</string>
+    <string name="imagem_do_pacote">imagem do pacote</string>
+    <string name="imagem_do_resumo">imagem_do_resumo</string>
 </resources>

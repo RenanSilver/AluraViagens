@@ -3,27 +3,26 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.activity.ResumoPacoteActivity">
+    android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/resumo_pacote_imagem"
         android:layout_width="0dp"
         android:layout_height="140dp"
+        android:contentDescription="@string/imagem_do_resumo"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/sao_paulo_sp" />
+        tools:srcCompat="@drawable/sao_paulo_sp" />
 
     <TextView
         android:id="@+id/resumo_pacote_local"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_margin="8dp"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -54,9 +53,12 @@
         android:id="@+id/resumo_pacote_preco"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
+        android:contentDescription="@string/imagem_do_pacote"
+        android:gravity="end"
         android:textAlignment="textEnd"
-        android:textColor="#0BC813"
+        android:textColor="#43A047"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/resumo_pacote_data"
         app:layout_constraintEnd_toEndOf="parent"
@@ -67,7 +69,7 @@
         android:id="@+id/resumo_pacote_preco_final"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Preço final:"
+        android:text="@string/preco_final"
         app:layout_constraintBottom_toTopOf="@+id/resumo_pacote_preco"
         app:layout_constraintEnd_toEndOf="@+id/resumo_pacote_preco" />
 
@@ -75,17 +77,15 @@
         android:id="@+id/resumo_pacote_botao_realiza_pagamento"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_margin="8dp"
         android:background="@drawable/botao_redondo_laranja"
-        android:text="Realizar pagamento"
-        android:textColor="#FFFCFC"
+        android:text="@string/realizar_pagamento"
+        android:textColor="@android:color/white"
         app:backgroundTint="@android:color/holo_orange_dark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="TextContrastCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>
