@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import com.alura.aluraviagens.R;
 
-public class Activity_pagamento extends AppCompatActivity {
+public class PagamentoActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

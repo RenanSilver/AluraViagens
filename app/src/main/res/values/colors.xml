@@ -3,7 +3,7 @@
     <color name="purple_200">@color/black</color>
     <color name="purple_500">#000000</color>
     <color name="purple_700">#000000</color>
-    <color name="teal_200">#FFFFFF</color>
+    <color name="teal_200">#656363</color>
     <color name="teal_700">@color/purple_500</color>
     <color name="black">#FFFFFF</color>
     <color name="white">#5C5C5C</color>
