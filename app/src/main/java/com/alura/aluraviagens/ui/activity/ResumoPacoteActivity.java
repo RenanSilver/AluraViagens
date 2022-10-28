@@ -3,6 +3,8 @@ package com.alura.aluraviagens.ui.activity;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -36,8 +38,15 @@ public class ResumoPacoteActivity extends AppCompatActivity {
         mostraPreco(pacoteSaoPaulo);
         mostraData(pacoteSaoPaulo);
 
-        Intent intent = new Intent(this, PagamentoActivity.class);
-        startActivity(intent);
+        Button botaoRealizaPagamento = findViewById(R.id.resumo_pacote_botao_realiza_pagamento);
+        botaoRealizaPagamento.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ResumoPacoteActivity.this,
+                        PagamentoActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void mostraData(Pacote pacote) {
