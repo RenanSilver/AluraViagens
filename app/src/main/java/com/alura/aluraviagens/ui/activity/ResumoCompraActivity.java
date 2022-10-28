@@ -1,5 +1,6 @@
 package com.alura.aluraviagens.ui.activity;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.widget.ImageView;
@@ -26,13 +27,14 @@ public class ResumoCompraActivity extends AppCompatActivity {
 
         setTitle(TITULO_APPBAR);
 
-        Pacote pacoteSaoPaulo = new Pacote("São Paulo", "sao_paulo_sp",
-                2, new BigDecimal("243.99"));
-
-        mostraLocal(pacoteSaoPaulo);
-        mostraImagem(pacoteSaoPaulo);
-        mostraData(pacoteSaoPaulo);
-        mostraPreco(pacoteSaoPaulo);
+        Intent intent = getIntent();
+        if(intent.hasExtra("pacote")){
+            final Pacote pacote = (Pacote) intent.getSerializableExtra("pacote");
+            mostraLocal(pacote);
+            mostraImagem(pacote);
+            mostraData(pacote);
+            mostraPreco(pacote);
+        }
 
     }
 
