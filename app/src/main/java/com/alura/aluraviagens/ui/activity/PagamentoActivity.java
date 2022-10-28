@@ -2,6 +2,7 @@ package com.alura.aluraviagens.ui.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -26,6 +27,9 @@ public class PagamentoActivity extends AppCompatActivity {
                 2, new BigDecimal("243.99"));
 
         mostraPreco(pacoteSaoPaulo);
+
+        Intent intent = new Intent(this, ResumoCompraActivity.class);
+        startActivity(intent);
 
     }
 

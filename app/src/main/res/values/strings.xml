@@ -14,4 +14,5 @@
     <string name="cvc_pagamento">cvc</string>
     <string name="finalizar_compra">Finalizar compra</string>
     <string name="nome_no_cartao">Nome no cartão</string>
+    <string name="banner">TODO</string>
 </resources>
