@@ -1,5 +1,7 @@
 package com.alura.aluraviagens.ui.activity;
 
+import static com.alura.aluraviagens.ui.activity.PacoteActivityConstantes.CHAVE_PACOTE;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -19,6 +21,7 @@ public class ListaPacotesActivity extends AppCompatActivity {
 
     public static final String TUTULO_APPBAR = "Pacotes";
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,11 +39,15 @@ public class ListaPacotesActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Pacote pacoteClicado = pacotes.get(position);
-                Intent intent = new Intent(ListaPacotesActivity.this,
-                        ResumoPacoteActivity.class);
-                intent.putExtra("pacote", pacoteClicado);
-                startActivity(intent);
+                vaiParaResumoPacote(pacoteClicado);
             }
         });
+    }
+
+    private void vaiParaResumoPacote(Pacote pacoteClicado) {
+        Intent intent = new Intent(ListaPacotesActivity.this,
+                ResumoPacoteActivity.class);
+        intent.putExtra(CHAVE_PACOTE, pacoteClicado);
+        startActivity(intent);
     }
 }

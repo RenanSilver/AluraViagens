@@ -1,5 +1,7 @@
 package com.alura.aluraviagens.ui.activity;
 
+import static com.alura.aluraviagens.ui.activity.PacoteActivityConstantes.CHAVE_PACOTE;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -25,24 +27,36 @@ public class PagamentoActivity extends AppCompatActivity {
 
         setTitle(TITULO_APPBAR);
 
+        carregaPacoteRecebido();
+
+    }
+
+    private void carregaPacoteRecebido() {
         Intent intent = getIntent();
-        if(intent.hasExtra("pacote")){
-            final Pacote pacote = (Pacote) intent.getSerializableExtra("pacote");
+        if(intent.hasExtra(CHAVE_PACOTE)){
+            final Pacote pacote = (Pacote) intent.getSerializableExtra(CHAVE_PACOTE);
 
             mostraPreco(pacote);
+            configuraBotao(pacote);
 
-            Button botaoFinalizaCompra = findViewById(R.id.pagamento_botao_finaliza_compra);
-            botaoFinalizaCompra.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(PagamentoActivity.this,
-                            ResumoCompraActivity.class);
-                    intent.putExtra("pacote", pacote);
-                    startActivity(intent);
-                }
-            });
         }
+    }
 
+    private void configuraBotao(Pacote pacote) {
+        Button botaoFinalizaCompra = findViewById(R.id.pagamento_botao_finaliza_compra);
+        botaoFinalizaCompra.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                vaiParaResumoCompra(pacote);
+            }
+        });
+    }
+
+    private void vaiParaResumoCompra(Pacote pacote) {
+        Intent intent = new Intent(PagamentoActivity.this,
+                ResumoCompraActivity.class);
+        intent.putExtra(CHAVE_PACOTE, pacote);
+        startActivity(intent);
     }
 
     private void mostraPreco(Pacote pacote) {
